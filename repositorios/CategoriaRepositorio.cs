@@ -20,8 +20,8 @@ namespace plantila_tienda_backend.repositorios
             _config = cofiguration;
         }
 
-        public async Task<RLista<Categoria>> GetCategoriasHijas(string idCategoria){
-            var filter = Builders<Categoria>.Filter.Eq("CategoriaPadre", idCategoria);
+        public async Task<RLista<Categoria>> GetCategoriasHijas(string NombreCategoria){
+            var filter = Builders<Categoria>.Filter.Eq("CategoriaPadre", NombreCategoria);
             var datos = await this.collection.Find<Categoria>(filter).ToListAsync();
             return new RLista<Categoria>(datos);
         }

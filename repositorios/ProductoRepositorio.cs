@@ -22,8 +22,8 @@ namespace plantila_tienda_backend.repositorios
             this._config = config;
         }
 
-        public async Task<RLista<Producto>> GetProductosByCategoria(string idCategoria){
-            var filter = Builders<Producto>.Filter.Eq("Categoria", idCategoria);
+        public async Task<RLista<Producto>> GetProductosByCategoria(string nombreCategoria){
+            var filter = Builders<Producto>.Filter.Eq("Categoria", nombreCategoria);
             var datos = await this.collection.Find<Producto>(filter).ToListAsync();
             return new RLista<Producto>(datos);
         }
@@ -39,11 +39,11 @@ namespace plantila_tienda_backend.repositorios
             return new RLista<Producto>(datos);
         }
 
-        public async Task<RLista<Producto>> GetProductosByCategoriaFilterPrecioAsc(string idCategoria){
+        public async Task<RLista<Producto>> GetProductosByCategoriaFilterPrecioAsc(string nombreCategoria){
             var filter = new List<BsonDocument>
             {
                 new BsonDocument("$match",
-                new BsonDocument("Categoria", idCategoria)),
+                new BsonDocument("Categoria", nombreCategoria)),
                 new BsonDocument("$sort", 
                 new BsonDocument("Precio", -1))
             };
@@ -61,11 +61,11 @@ namespace plantila_tienda_backend.repositorios
             return new RLista<Producto>(datos);
         }
 
-        public async Task<RLista<Producto>> GetProductosByCategoriaFilterPrecioDesc(string idCategoria){
+        public async Task<RLista<Producto>> GetProductosByCategoriaFilterPrecioDesc(string NombreCategoria){
             var filter = new List<BsonDocument>
             {
                 new BsonDocument("$match",
-                new BsonDocument("Categoria", idCategoria)),
+                new BsonDocument("Categoria", NombreCategoria)),
                 new BsonDocument("$sort", 
                 new BsonDocument("Precio", 1))
             };

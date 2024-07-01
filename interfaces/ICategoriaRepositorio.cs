@@ -10,6 +10,6 @@ namespace plantila_tienda_backend.interfaces
 {
     public interface ICategoriaRepositorio : IBaseRepositorio<Categoria>
     {
-        Task<RLista<Categoria>> GetCategoriasHijas(string idCategoria);
+        Task<RLista<Categoria>> GetCategoriasHijas(string NombreCategoria);
     }
 }

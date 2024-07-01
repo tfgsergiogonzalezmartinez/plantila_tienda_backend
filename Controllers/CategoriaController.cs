@@ -48,9 +48,9 @@ namespace plantila_tienda_backend.Controllers
             return Ok(categoria.Valor);
         }
         [HttpGet("categoria/{idCategoria}")]
-        public async Task<IActionResult> GetCategoriasHijas(string idCategoria)
+        public async Task<IActionResult> GetCategoriasHijas(string NombreCategoria)
         {
-            var categorias = await _categoriaRepositorio.GetCategoriasHijas(idCategoria);
+            var categorias = await _categoriaRepositorio.GetCategoriasHijas(NombreCategoria);
             return Ok(categorias.Lista);
         }
         [Authorize(Roles = "admin")]

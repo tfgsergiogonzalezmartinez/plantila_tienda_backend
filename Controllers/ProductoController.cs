@@ -49,22 +49,22 @@ namespace plantila_tienda_backend.Controllers
             return Ok(productoActualizado.Valor);
         }
 
-        [HttpGet("categoria/{idCategoria}")]
-        public async Task<IActionResult> GetProductosByCategoria(string idCategoria)
+        [HttpGet("categoria/{nombreCategoria}")]
+        public async Task<IActionResult> GetProductosByCategoria(string nombreCategoria)
         {
-            var productos = await _productoRepositorio.GetProductosByCategoria(idCategoria);
+            var productos = await _productoRepositorio.GetProductosByCategoria(nombreCategoria);
             return Ok(productos.Lista);
         }
-        [HttpGet("categoria/{idCategoria}/precio/asc")]
-        public async Task<IActionResult> GetProductosByCategoriaFilterPrecioAsc(string idCategoria)
+        [HttpGet("categoria/{nombreCategoria}/precio/asc")]
+        public async Task<IActionResult> GetProductosByCategoriaFilterPrecioAsc(string nombreCategoria)
         {
-            var productos = await _productoRepositorio.GetProductosByCategoriaFilterPrecioAsc(idCategoria);
+            var productos = await _productoRepositorio.GetProductosByCategoriaFilterPrecioAsc(nombreCategoria);
             return Ok(productos.Lista);
         }
-        [HttpGet("categoria/{idCategoria}/precio/desc")]
-        public async Task<IActionResult> GetProductosByCategoriaFilterPrecioDesc(string idCategoria)
+        [HttpGet("categoria/{nombreCategoria}/precio/desc")]
+        public async Task<IActionResult> GetProductosByCategoriaFilterPrecioDesc(string nombreCategoria)
         {
-            var productos = await _productoRepositorio.GetProductosByCategoriaFilterPrecioDesc(idCategoria);
+            var productos = await _productoRepositorio.GetProductosByCategoriaFilterPrecioDesc(nombreCategoria);
             return Ok(productos.Lista);
         }
         [HttpGet("precio/asc")]
