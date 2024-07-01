@@ -1,0 +1,6 @@
+@plantilla_tienda_backend_HostAddress = http://localhost:5157
+
+GET {{plantilla_tienda_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
