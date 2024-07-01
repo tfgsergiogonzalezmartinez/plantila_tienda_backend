@@ -19,8 +19,8 @@ namespace backend_tfg.modelos.usuario
         public string Rol { get; set; } = string.Empty;
         public string Estado { get; set; } = string.Empty;
         public bool Listable { get; set; } = false;
-        public string Telefono { get; set; } = string.Empty;
-        public Direccion DireccionUsuario { get; set; } = new Direccion();
+        public string? Telefono { get; set; }
+        public Direccion? DireccionUsuario { get; set; }
         
     }
 }

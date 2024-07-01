@@ -10,7 +10,6 @@ using plantila_tienda_backend.modelos.producto;
 namespace plantila_tienda_backend.Controllers
 {   
     [ApiController]
-    [Authorize]
     [Route("api/[controller]")]
     public class ProductoController : ControllerBase
     {
@@ -26,59 +25,61 @@ namespace plantila_tienda_backend.Controllers
         public async Task<IActionResult> GetProductos()
         {
             var productos = await _productoRepositorio.GetAll();
-            return Ok(productos);
+            return Ok(productos.Lista);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
             var producto = await _productoRepositorio.GetById(id);
-            return Ok(producto);
+            return Ok(producto.Valor);
         }
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> Create(Producto producto)
         {
             var productoCreado = await _productoRepositorio.Create(producto);
-            return Ok(productoCreado);
+            return Ok(productoCreado.Valor);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPut]
         public async Task<IActionResult> Update(Producto producto)
         {
             var productoActualizado = await _productoRepositorio.Put(producto);
-            return Ok(productoActualizado);
+            return Ok(productoActualizado.Valor);
         }
 
         [HttpGet("categoria/{idCategoria}")]
         public async Task<IActionResult> GetProductosByCategoria(string idCategoria)
         {
             var productos = await _productoRepositorio.GetProductosByCategoria(idCategoria);
-            return Ok(productos);
+            return Ok(productos.Lista);
         }
         [HttpGet("categoria/{idCategoria}/precio/asc")]
         public async Task<IActionResult> GetProductosByCategoriaFilterPrecioAsc(string idCategoria)
         {
             var productos = await _productoRepositorio.GetProductosByCategoriaFilterPrecioAsc(idCategoria);
-            return Ok(productos);
+            return Ok(productos.Lista);
         }
         [HttpGet("categoria/{idCategoria}/precio/desc")]
         public async Task<IActionResult> GetProductosByCategoriaFilterPrecioDesc(string idCategoria)
         {
             var productos = await _productoRepositorio.GetProductosByCategoriaFilterPrecioDesc(idCategoria);
-            return Ok(productos);
+            return Ok(productos.Lista);
         }
         [HttpGet("precio/asc")]
         public async Task<IActionResult> GetProductosFilterPrecioAsc()
         {
             var productos = await _productoRepositorio.GetProductosFilterPrecioAsc();
-            return Ok(productos);
+            return Ok(productos.Lista);
         }
         [HttpGet("precio/desc")]
         public async Task<IActionResult> GetProductosFilterPrecioDesc()
         {
             var productos = await _productoRepositorio.GetProductosFilterPrecioDesc();
-            return Ok(productos);
+            return Ok(productos.Lista);
         }
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {

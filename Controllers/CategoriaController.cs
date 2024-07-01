@@ -10,7 +10,6 @@ using plantila_tienda_backend.modelos.categoria;
 namespace plantila_tienda_backend.Controllers
 {
     [ApiController]
-    [Authorize]
     [Route("api/[controller]")]
     public class CategoriaController : ControllerBase
     {
@@ -25,33 +24,36 @@ namespace plantila_tienda_backend.Controllers
         public async Task<IActionResult> GetCategorias()
         {
             var categorias = await _categoriaRepositorio.GetAll();
-            return Ok(categorias);
+            return Ok(categorias.Lista);
         }
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> CreateCategoria(Categoria categoria)
         {
             var categoriaCreada = await _categoriaRepositorio.Create(categoria);
-            return Ok(categoriaCreada);
+            return Ok(categoriaCreada.Valor);
         }
+        
+        [Authorize(Roles = "admin")]
         [HttpPut]
         public async Task<IActionResult> UpdateCategoria(Categoria categoria)
         {
             var categoriaActualizada = await _categoriaRepositorio.Put(categoria);
-            return Ok(categoriaActualizada);
+            return Ok(categoriaActualizada.Valor);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
             var categoria = await _categoriaRepositorio.GetById(id);
-            return Ok(categoria);
+            return Ok(categoria.Valor);
         }
         [HttpGet("categoria/{idCategoria}")]
         public async Task<IActionResult> GetCategoriasHijas(string idCategoria)
         {
             var categorias = await _categoriaRepositorio.GetCategoriasHijas(idCategoria);
-            return Ok(categorias);
+            return Ok(categorias.Lista);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategoria(string id)
         {

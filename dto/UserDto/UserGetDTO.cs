@@ -17,8 +17,8 @@ namespace backend_tfg.dto.UserDto
         public string Apellido2 { get; set; }
         public string Rol { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public string Telefono { get; set; }
-        public Direccion DireccionUsuario { get; set; }
+        public string? Telefono { get; set; }
+        public Direccion? DireccionUsuario { get; set; }
         
         public UserGetDto() : base()
         {
