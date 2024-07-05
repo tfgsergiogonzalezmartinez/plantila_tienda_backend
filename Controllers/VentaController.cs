@@ -29,7 +29,7 @@ namespace plantila_tienda_backend.Controllers
             return Ok(ventas.Lista);
         }
 
-        [Authorize()]
+        [Authorize]
         [HttpGet("GetVentasByUsuario/{idUsuario}")]
         public async Task<IActionResult> GetVentasByUsuario(string idUsuario)
         {

@@ -16,6 +16,7 @@ namespace plantila_tienda_backend.interfaces
         Task<RLista<Producto>> GetProductosFilterPrecioAsc();
         Task<RLista<Producto>> GetProductosByCategoria(string idCategoria);
         Task<RItem<Producto>> CrearProducto(CrearProductoDto crearProductoDto);
+        Task<RItem<Producto>> SubirImagenesProducto(SubirImagenesDto subirImagenesDto);
 
     }
 }

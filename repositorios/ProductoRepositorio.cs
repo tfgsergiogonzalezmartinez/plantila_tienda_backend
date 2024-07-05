@@ -81,6 +81,21 @@ namespace plantila_tienda_backend.repositorios
             return new RItem<Producto>(producto);
         }
 
+        public async Task<RItem<Producto>> SubirImagenesProducto(SubirImagenesDto subirImagenesDto){
+            var filter = Builders<Producto>.Filter.Eq("Id", subirImagenesDto.IdProducto);
+            var producto = await this.collection.Find(filter).FirstOrDefaultAsync();
+            if(producto == null){
+                return new RItem<Producto>(null){
+                    Mensaje = "Producto no encontrado",
+                    Resultado = -1
+                };
+            }
+            producto.Fotos = subirImagenesDto.Fotos;
+            producto.FotoPrincipal = subirImagenesDto.FotoPrincipal;
+            await this.collection.ReplaceOneAsync(filter, producto);
+            return new RItem<Producto>(producto);
+        }
+
         
     }
 }

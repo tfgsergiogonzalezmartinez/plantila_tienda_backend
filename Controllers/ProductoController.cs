@@ -88,6 +88,17 @@ namespace plantila_tienda_backend.Controllers
             return Ok(productoEliminado);
         }
 
+        [Authorize(Roles ="admin")]
+        [HttpPost("subirImagenes")]
+        public async Task<IActionResult> SubirImagenesProducto(SubirImagenesDto subirImagenesDto)
+        {
+            var producto = await _productoRepositorio.SubirImagenesProducto(subirImagenesDto);
+            if (producto.Resultado != 0){
+                return BadRequest(producto.Mensaje);
+            }
+            return Ok(producto.Valor);
+        }
+
 
         
     }
