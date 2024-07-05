@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using plantila_tienda_backend.dto.ProductoDto;
 using plantila_tienda_backend.interfaces;
 using plantila_tienda_backend.modelos.producto;
 
@@ -35,10 +36,10 @@ namespace plantila_tienda_backend.Controllers
             return Ok(producto.Valor);
         }
         [Authorize(Roles = "admin")]
-        [HttpPost]
-        public async Task<IActionResult> Create(Producto producto)
+        [HttpPost("CrearProducto")]
+        public async Task<IActionResult> CrearProducto(CrearProductoDto producto)
         {
-            var productoCreado = await _productoRepositorio.Create(producto);
+            var productoCreado = await _productoRepositorio.CrearProducto(producto);
             return Ok(productoCreado.Valor);
         }
         [Authorize(Roles = "admin")]

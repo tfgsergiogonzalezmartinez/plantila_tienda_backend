@@ -7,6 +7,7 @@ using backend_tfg.interfaces;
 using backend_tfg.repositorios;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using plantila_tienda_backend.dto.ProductoDto;
 using plantila_tienda_backend.interfaces;
 using plantila_tienda_backend.modelos.producto;
 
@@ -71,6 +72,13 @@ namespace plantila_tienda_backend.repositorios
             };
             var datos = await this.collection.Aggregate<Producto>(filter).ToListAsync();
             return new RLista<Producto>(datos);
+        }
+
+        public async Task<RItem<Producto>> CrearProducto(CrearProductoDto crearProductoDto){
+            Producto producto = new Producto();
+            crearProductoDto.toEntidad(producto);
+            await this.collection.InsertOneAsync(producto);
+            return new RItem<Producto>(producto);
         }
 
         

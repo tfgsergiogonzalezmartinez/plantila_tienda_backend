@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj": {}
+    "c:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj": {
+    "c:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj",
+        "projectUniqueName": "c:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj",
         "projectName": "plantilla_tienda_backend",
-        "projectPath": "C:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj",
+        "projectPath": "c:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj",
         "packagesPath": "C:\\Users\\Sergio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\obj\\",
+        "outputPath": "c:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sergio\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -55,6 +55,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.27.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -55,3 +55,6 @@ c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\obj\Debug\net8.0\refi
 c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\obj\Debug\net8.0\plantilla_tienda_backend.pdb
 c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\obj\Debug\net8.0\plantilla_tienda_backend.genruntimeconfig.cache
 c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\obj\Debug\net8.0\ref\plantilla_tienda_backend.dll
+c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\bin\Debug\net8.0\dbModelos\bbdd_categorias.json
+c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\bin\Debug\net8.0\dbModelos\bbdd_productos.json
+c:\Users\Sergio\Desktop\TFG\NewTFG\plantila_tienda_backend\bin\Debug\net8.0\Newtonsoft.Json.dll
