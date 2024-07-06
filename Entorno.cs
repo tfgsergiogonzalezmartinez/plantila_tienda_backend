@@ -12,6 +12,7 @@ namespace backend_tfg
         public string? IP { get; set; }
         public string? IP_PRODUCCION { get; set; }
         public string? IP_DESARROLLO { get; set; }
+
         public string ?DB_HOST { get; set; }
         public int? DB_PORT { get; set; }
         public string? DB_USER { get; set; }
@@ -20,6 +21,9 @@ namespace backend_tfg
 
         public int? PORT { get; set; }
         public string? HOST { get; set; }
+
+        public string? API_HOST { get; set; }
+        public int? API_PORT { get; set; }
 
         public string? JWT_SECRET { get; set; }
         public string? JWT_AUDIENCE { get; set; }
@@ -49,8 +53,8 @@ namespace backend_tfg
             DB_PASSWORD = configuration["DB_PASSWORD"];
             DB_NAME = configuration["DB_NAME"];
 
-            PORT = Convert.ToInt32(configuration["PORT"]);
-            HOST = configuration["HOST"];
+            API_HOST = configuration["API_HOST"];
+            API_PORT = Convert.ToInt32(configuration["API_PORT"]);
             
             JWT_SECRET = configuration["JWT_SECRET"];
             JWT_AUDIENCE = configuration["JWT_AUDIENCE"];
