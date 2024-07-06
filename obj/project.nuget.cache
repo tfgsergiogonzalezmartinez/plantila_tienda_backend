@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "asfMysSoPIBQxNyPUIsxsOC0CXQNe151673NfMZ+vCbqyyVjp9ZVyuH0Iyu57utzVP1J/LPcn6eKLcnl36habA==",
+  "dgSpecHash": "gzcg4uWpEZGmIojGeRKMBq0kWwDQgpRfZT1IAYFnAMRmgYGOVPHpzxRcCsX6GEcqLdvuEqZyh+0uJfHRErf/mQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj",
+  "projectFilePath": "C:\\Users\\Sergio\\Desktop\\TFG\\NewTFG\\plantila_tienda_backend\\plantilla_tienda_backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sergio\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Sergio\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
