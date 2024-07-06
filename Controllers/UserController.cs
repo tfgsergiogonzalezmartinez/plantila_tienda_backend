@@ -82,18 +82,7 @@ namespace backend_tfg.Controllers
             return Ok(new UserGetDto(dato.Valor));
 
         }
-        [Authorize(Roles = "admin")]
-        [HttpPost("ModificarRol")]
-        public async Task<ActionResult<UserGetDto>> ModificarRol(UserCambiarRolDto userCambiarRolDto)
-        {
-            var dato = await _usuarioRepositorio.ModificarRol(userCambiarRolDto);
-            if (dato.Resultado != 0)
-            {
-                return BadRequest(dato.Mensaje);
-            }
 
-            return Ok(new UserGetDto(dato.Valor));
-        }
         [Authorize]
         [HttpGet("ObtenerUsuariosCoincidentes/{nombre}")]
         public async Task<ActionResult<UserGetDto>> ObtenerUsuariosCoincidentes(string nombre)

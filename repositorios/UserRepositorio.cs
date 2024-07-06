@@ -120,16 +120,7 @@ namespace backend_tfg.repositorios
                     Mensaje = "Error al crear usuario"
                 };
             }
-            //Creo la carpeta del usuario, en /data, aqui estara su foto de perfil y sus archivos.
-            var rutaUsuario = Path.Combine("data", usuario.Id.ToString());
-            if (!Directory.Exists(rutaUsuario))
-            {
-                Directory.CreateDirectory(rutaUsuario);
-            }
-            string avatarDefault = @"data/DefaultData/avatar.jpg";
-            System.IO.File.Copy(avatarDefault, rutaUsuario + "/avatar.jpg");
-
-
+            
             //genero el token y lo devuelvo para que inicio sesion automaticamente.
             var token = this.GenerateJSONWebToken(user);
             UserLoginGetDto userLoginGetDto = new UserLoginGetDto(user);
@@ -196,32 +187,6 @@ namespace backend_tfg.repositorios
             };
 
         }
-        public async Task<RItem<User>> ModificarRol(UserCambiarRolDto userModificarRolDto){
-            var usuario = await collection.Find<User>(u => u.Email == userModificarRolDto.Email).FirstOrDefaultAsync();
-            if (usuario == null)
-            {
-                return new RItem<User>(null)
-                {
-                    Resultado = -1,
-                    Mensaje = "Usuario no encontrado"
-                };
-            }
-            usuario.Rol = userModificarRolDto.Rol;
-            var resultado = await collection.ReplaceOneAsync(u => u.Id == usuario.Id, usuario);
-            if (resultado.ModifiedCount == 0)
-            {
-                return new RItem<User>(null)
-                {
-                    Resultado = -1,
-                    Mensaje = "Error al cambiar el rol"
-                };
-            }
-            return new RItem<User>(usuario);
-    
-        }
-
-
-
 
 
         private string GenerateJSONWebToken(User userInfo)
