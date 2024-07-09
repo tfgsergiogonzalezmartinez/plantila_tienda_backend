@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\plantilla_tienda_backend.props" />
+</Project>
